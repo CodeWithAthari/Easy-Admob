@@ -83,6 +83,7 @@ private var admobAds = AdmobAds()
  * Youtube: https://www.youtube.com/@devatrii
  */
 fun loadAdUnits(onSuccess: () -> Unit = {}) {
+    
     val firebaseDatabase = FirebaseDatabase.getInstance()
     val ref = firebaseDatabase.getReference("admob")
 
@@ -155,6 +156,8 @@ fun ViewGroup.loadBannerAd(
 
     }
     if (waterMark) {
+        if (txtWaterMark.parent !=null)
+            (txtWaterMark.parent as ViewGroup).removeView(txtWaterMark)
         addView(txtWaterMark)
     }
     val delay: Long = if (isFirstBannerAdLoaded) 0 else 500
@@ -200,14 +203,20 @@ fun ViewGroup.loadBannerAd(
                         txtWaterMark.fadeOut()
                         delayAndRun(admobAds.bannerAdAnimationDuration) {
                             txtWaterMark.visibility = View.GONE
+                            if (adView.parent !=null)
+                                (adView.parent as ViewGroup).removeView(adView)
                             bannerLayout.addView(adView)
                             adView.fadeIn()
                         }
                     } else {
                         txtWaterMark.visibility = View.GONE
+                        if (adView.parent !=null)
+                                (adView.parent as ViewGroup).removeView(adView)
                         bannerLayout.addView(adView)
                     }
                 } else {
+                    if (adView.parent !=null)
+                                (adView.parent as ViewGroup).removeView(adView)
                     bannerLayout.addView(adView)
                 }
             }
