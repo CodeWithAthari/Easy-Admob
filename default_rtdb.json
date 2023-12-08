@@ -1,0 +1,23 @@
+{
+  "admob": {
+    "appOpenAd": "ca-app-pub-3940256099942544/9257395921",
+    "bannerAd": "ca-app-pub-3940256099942544/6300978111",
+    "bannerAdAnimation": true,
+    "bannerAdAnimationDuration": 300,
+    "bannerAdHideWaterMarkOnError": true,
+    "bannerAdRetriesThreshold": 10,
+    "bannerAdShowWaterMark": true,
+    "bannerAdWaterMarkBG": "#F8C9D0",
+    "bannerAdWaterMarkFG": "#BA4F60",
+    "bannerAdWaterMarkText": "<br>Loading Banner Ad<br>",
+    "dialogCancellable": false,
+    "dialogMessage": "Please Wait Showing Ad...",
+    "interstitialAd": "ca-app-pub-3940256099942544/1033173712",
+    "interstitialAdDelay": 2,
+    "interstitialAdRetriesThreshold": 10,
+    "loadInterstitialAdAgainAfterShowing": true,
+    "permenantHideInterstitialAdProgress": false,
+    "showInterstitialAdInstantly": false,
+    "showProgressInterstitialAdInstantly": true
+  }
+}
