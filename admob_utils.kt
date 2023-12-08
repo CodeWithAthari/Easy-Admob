@@ -133,7 +133,7 @@ fun ViewGroup.loadBannerAd(
         val layoutParameters =
             LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
         layoutParams = layoutParameters
-        if (admobAds.bannerAdWaterMarkFG != null) {
+       if (admobAds.bannerAdWaterMarkFG != null && admobAds.bannerAdWaterMarkFG != "null") {
             try {
                 setTextColor(Color.parseColor(admobAds.bannerAdWaterMarkFG))
             } catch (e: Exception) {
@@ -143,7 +143,7 @@ fun ViewGroup.loadBannerAd(
             setTextColor(Color.WHITE)
         }
 
-        if (admobAds.bannerAdWaterMarkBG != null) {
+        if (admobAds.bannerAdWaterMarkBG != null && admobAds.bannerAdWaterMarkBG != "null") {
             try {
                 this.setBackgroundColor(Color.parseColor(admobAds.bannerAdWaterMarkBG))
             } catch (e: Exception) {
