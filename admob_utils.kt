@@ -129,7 +129,11 @@ fun ViewGroup.loadBannerAd(
         this.gravity = Gravity.CENTER
     val waterMarkText = admobAds.bannerAdWaterMarkText
     val txtWaterMark = TextView(this.context).apply {
-        text = Html.fromHtml(waterMarkText, Html.FROM_HTML_MODE_COMPACT)
+       text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(waterMarkText, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            Html.fromHtml(waterMarkText)
+        }
         gravity = Gravity.CENTER
         val layoutParameters =
             LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
